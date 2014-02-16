@@ -1,7 +1,7 @@
 vagrant-server-playbook
 =======================
 
-Ansible playbook to install [vagrant](http://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org) on ubuntu/debian server server.
+Ansible playbook to install [vagrant](http://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org) on ubuntu/debian server.
 
 ##Requirements##
 
