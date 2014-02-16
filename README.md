@@ -5,7 +5,7 @@ Ansible playbook to install [vagrant](http://www.vagrantup.com/) and [VirtualBox
 
 ##Requirements##
 
-- ansible 1.4.4
+- ansible 1.4.0+
 
 ##Usage##
 
