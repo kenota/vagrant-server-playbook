@@ -1,0 +1,26 @@
+---
+# Task list to install vagrant and VirtualBox on ubuntu machine
+  # - name: Update apt-cache
+  #   apt: update_cache=yes
+  - name: Installing required packages
+    apt: pkg={{item}} state=present
+    with_items:
+      - python-apt
+      - python-pycurl
+      - wget
+  - name: Adding VirtualBox deb source
+    apt_repository: repo="deb http://download.virtualbox.org/virtualbox/debian {{ansible_distribution_release}} contrib" update-cache=yes   
+
+  - name: Installing Oracle VirtualBox key
+    apt_key: url={{key_file}} state=present
+    
+  - name: Installing VirtualBox
+    apt: pkg=virtualbox-{{virtualbox_version}} state=present force=yes
+    
+  - name: Downloading Vagrant
+    command: wget -O /tmp/vagrant.deb {{vagrant_url}} creates=/tmp/vagrant.deb
+    
+  - name: Installing vagrant deb package
+    command: dpkg -i /tmp/vagrant.deb
+  
+     

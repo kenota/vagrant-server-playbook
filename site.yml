@@ -1,0 +1,10 @@
+---
+# This playbook installs Vagrant on ubuntu server 
+    
+
+- hosts: vagrant
+  sudo: yes
+  vars_files:
+    - arch_vars/{{ansible_architecture}}.yml
+  roles:
+  - vagrant
